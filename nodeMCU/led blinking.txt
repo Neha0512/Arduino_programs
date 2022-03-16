@@ -1,0 +1,25 @@
+void setup() {
+  // put your setup code here, to run once:
+pinMode(D0, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(D0,HIGH);
+delay(1000);
+digitalWrite(D0,LOW);
+delay(1000);
+}
+
+
+#include <LiquidCrystal.h>
+const int rs = 5, en = 4, d4 = 14, d5 = 12, d6 = 13, d7 = 15;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+void setup() {
+    lcd.begin(16, 2);
+    lcd.print("hello, world!");
+}
+void loop() {
+    lcd.setCursor(0, 1);
+    lcd.print(millis() / 1000);
+}
